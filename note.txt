@@ -1,0 +1,2 @@
+Put a ~ between events. if there is not an event after the one you put, then don't put one there. 
+End the specific data with a /?/

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Officers - (REDACTED) FFA Chapter</title>
+  <link href="/style.css" rel="stylesheet" type="text/css" />
+  <link href = "/fonts.css" rel = "stylesheet" type = "text/css" />
+
+
+  <!--banner icon-->
+  <!-- WARNING: NOT TO BE IMPLEMENTED UNTIL CONSENT IS OBTAINED BY THE ORGANIZATION -->
+  <!--
+  <link rel="icon" sizes="192x192" type="image/x-icon" href="https://www.ffa.org/wp-content/uploads/2019/04/cropped-NationalFFA_75x96-32x32.png">
+  -->
+</head>
+<body>
+
+  <div id = main style = "z-index: 1000; position: relative;"></div><!-- inserts html content into here -->
+  <section1 class = "mainSection">
+    <h1 style = "font-family:'Courgette', monospace;  font-size:50px;">(REDACTED) FFA Chapter</h1>
+    <h1 style = "font-family: 'Noto Sans', monospace;">Officer Team</h1>
+    <div>
+      <section>
+        <ul>
+          <li>
+            <h2>President</h2>
+            <img src = "images/penguin(seen stuff).png" style = "height: 10%; width:15%;">
+            <p>
+              <strong>Name:</strong> (REDACTED)<br>
+              <strong>Position:</strong> President<br>
+              <strong>Contact:</strong> (REDACTED)<br>
+              <strong>Email:</strong> (REDACTED)<br>
+              <strong>Phone:</strong> (REDACTED)<br>
+            </p>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <ul>
+          <li>
+            <h2>President</h2>
+            <img src = "images/penguin(seen stuff).png" style = "height: 10%; width:15%;">
+            <p>
+              <strong>Name:</strong> (REDACTED)<br>
+              <strong>Position:</strong> President<br>
+              <strong>Contact:</strong> (REDACTED)<br>
+              <strong>Email:</strong> (REDACTED)<br>
+              <strong>Phone:</strong> (REDACTED)<br>
+            </p>
+          </li>
+        </ul>
+      </section>
+      
+    </div>
+    
+  </section1>
+
+
+  <script type="module">
+    function setCookie(name, value){
+      document.cookie = name + "=" + value + ";";
+      console.log("Cookie, YUM:" + name + "=" + value)
+    }
+    function getCookie(name){
+      var cookieName = name + "=";
+      var decodedCookie = decodeURIComponent(document.cookie)
+      var cookieArray = decodedCookie.split(';');
+      for(var i = 0; i < cookieArray.length; i++){
+         var cookie = cookieArray[i];
+         while (cookie.charAt(0) == ' '){
+           cookie = cookie.substring(1);
+         }
+        if(cookie.indexOf(cookieName) == 0){
+          var cookieValue = cookie.substring(cookieName.length, cookie.length);
+          console.log("WE WERE GIVEN A COOKIE! HERE IT IS: " + cookieValue)
+          return cookieValue;
+        }
+      }
+      if(cookieName == ""){
+        return 0;
+      }
+    }
+
+    // Use the Fetch API to get the content of the template
+    //if(!getCookie("fetchedTemplate")){
+
+    fetch('/template.html')
+      .then(response => response.text())
+      .then(template => {
+        // Inject the template into the section
+
+
+        setCookie("fetchedTemplate", true)
+        document.getElementById('main').innerHTML += template;
+
+
+      })
+      .catch(error => console.error('Error fetching template:', error));
+    /*} else if(getCookie("fetchedTemplate")) {
+      console.log("NO NEED TO FETCH TEMPLATE AGAIN")
+      console.log(window.location.href)
+    }
+    */
+  </script> <!-- fetch or gets the html and inserts it-->
+
+
+  <script src="style.js" type = module defer></script>
+  <script src="script.js" type = module ></script>
+
+</body>
+
+</html>
